@@ -79,6 +79,30 @@ demostración):
 | admin   | admin123   | ADMIN   |
 | docente | docente123 | DOCENTE |
 
+### Módulos web de docentes y estudiantes
+
+Después de iniciar sesión, los botones **Docentes** y **Estudiantes** abren
+sus respectivos listados. Ambos permiten buscar, registrar, editar y eliminar
+mediante las rutas `/api/v1/docentes` y `/api/v1/estudiantes`. Los cambios se
+guardan en SQLite, en la misma base de datos utilizada por la API.
+
+En Estudiantes, seleccione una carrera cargada desde la API y una fecha de
+nacimiento anterior a hoy. El listado muestra hasta 50 estudiantes por página;
+use **Anterior** y **Siguiente** para recorrerlo. **Cancelar edición** limpia el
+formulario para crear un registro nuevo. **Actualizar** vuelve a consultar la
+vista actual.
+
+Si hay un número de cuenta, número de empleado o correo duplicado, el formulario
+muestra el error y conserva los datos. No se pueden eliminar estudiantes con
+historial de matrículas ni docentes con secciones asignadas; puede editar su
+estado a `INACTIVO` para conservar sus relaciones.
+
+Para verificar estos flujos de API con una base temporal independiente:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
 Como el frontend se sirve desde la misma API, no hay que preocuparse por CORS
 ni levantar un segundo servidor: basta con `uvicorn app.main:app --reload` y
 abrir el navegador.
