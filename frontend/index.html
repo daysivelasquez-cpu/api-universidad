@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sistema Académico</title>
   <link rel="stylesheet" href="/styles.css">
+  <script src="/personas.js" defer></script>
   <script src="/app.js" defer></script>
 </head>
 <body>
@@ -21,11 +22,36 @@
         <nav aria-label="Menú principal">
           <button id="inicio" type="button">Inicio</button>
           <button id="asignaturas" type="button">Asignaturas</button>
+          <button id="docentes" type="button">Docentes</button>
+          <button id="estudiantes" type="button">Estudiantes</button>
           <button id="actualizar" type="button">Actualizar</button>
           <button id="salir" type="button">Cerrar sesión</button>
         </nav>
       </header>
       <section id="dashboard" aria-label="Resumen académico"></section>
+      <section id="personas" hidden>
+        <h2 id="titulo-personas"></h2>
+        <form id="buscar-personas">
+          <label>Buscar <input name="buscar" type="search" maxlength="100"></label>
+          <button>Buscar</button>
+        </form>
+        <h3 id="titulo-editor">Nuevo registro</h3>
+        <form id="editar-persona">
+          <div id="campos-persona" class="campos"></div>
+          <button id="guardar-persona">Guardar</button>
+          <button id="cancelar-persona" type="button">Cancelar edición</button>
+        </form>
+        <p id="mensaje-personas" role="status" aria-live="polite"></p>
+        <div class="tabla"><table>
+          <thead id="cabecera-personas"></thead>
+          <tbody id="filas-personas"></tbody>
+        </table></div>
+        <nav id="paginas-personas" aria-label="Páginas de estudiantes">
+          <button id="anterior-personas" type="button">Anterior</button>
+          <span id="pagina-personas"></span>
+          <button id="siguiente-personas" type="button">Siguiente</button>
+        </nav>
+      </section>
       <section id="materias" hidden>
         <h2>Asignaturas</h2>
         <form id="filtros">
