@@ -1,0 +1,22 @@
+:root { color-scheme: dark; font-family: system-ui, sans-serif; background: #101010; color: #f4f4f4; }
+body { margin: 0; }
+main { max-width: 1100px; margin: auto; padding: 28px; }
+header, nav { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+header { justify-content: space-between; margin-bottom: 28px; }
+h1 { font-size: 1.6rem; }
+label { display: block; margin: 14px 0; }
+input, button { font: inherit; border: 1px solid #555; border-radius: 7px; padding: 10px 14px; background: #202020; color: inherit; }
+input { display: block; margin-top: 7px; max-width: 100%; box-sizing: border-box; }
+button { cursor: pointer; }
+button:hover, button:focus-visible { background: #383838; }
+button:disabled { opacity: .6; cursor: wait; }
+#login { max-width: 380px; margin: 70px auto; }
+#login input { width: 100%; }
+#dashboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+article { border: 1px solid #444; border-radius: 10px; padding: 20px; background: #1c1c1c; }
+article strong { display: block; font-size: 1.8rem; }
+.tabla { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 14px; border-bottom: 1px solid #444; }
+#mensaje { min-height: 1.5em; }
+[hidden] { display: none !important; }

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sistema Académico</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <form id="login">
+      <h1>Sistema Académico</h1>
+      <label>Usuario <input name="usuario" required autocomplete="username"></label>
+      <label>Contraseña <input name="clave" type="password" required autocomplete="current-password"></label>
+      <button>Iniciar sesión</button>
+    </form>
+    <div id="sistema" hidden>
+      <header>
+        <h1 id="saludo"></h1>
+        <nav aria-label="Menú principal">
+          <button id="inicio" type="button">Inicio</button>
+          <button id="asignaturas" type="button">Asignaturas</button>
+          <button id="actualizar" type="button">Actualizar</button>
+          <button id="salir" type="button">Cerrar sesión</button>
+        </nav>
+      </header>
+      <section id="dashboard" aria-label="Resumen académico"></section>
+      <section id="materias" hidden>
+        <h2>Asignaturas</h2>
+        <form id="filtros">
+          <label>Buscar por código o nombre <input name="buscar" type="search"></label>
+          <button>Buscar</button>
+        </form>
+        <div class="tabla">
+          <table>
+            <thead><tr><th>Código</th><th>Nombre</th><th>UV</th><th>Carrera</th><th>Requisito</th><th>Estado</th></tr></thead>
+            <tbody id="filas"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+    <p id="mensaje" role="status" aria-live="polite"></p>
+  </main>
+</body>
+</html>
